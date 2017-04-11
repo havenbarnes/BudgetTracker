@@ -7,25 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76AAAD967600EE3B043DF385 /* Pods_StudentBudget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4929BD3FB16224F47FEA3D5D /* Pods_StudentBudget.framework */; };
 		816377551E99C0E70070E53F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816377541E99C0E70070E53F /* AppDelegate.swift */; };
 		816377581E99C0E70070E53F /* StudentBudget.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 816377561E99C0E70070E53F /* StudentBudget.xcdatamodeld */; };
-		8163775A1E99C0E70070E53F /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816377591E99C0E70070E53F /* MasterViewController.swift */; };
-		8163775C1E99C0E70070E53F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8163775B1E99C0E70070E53F /* DetailViewController.swift */; };
+		8163775A1E99C0E70070E53F /* BudgetsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816377591E99C0E70070E53F /* BudgetsTableViewController.swift */; };
+		8163775C1E99C0E70070E53F /* BudgetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8163775B1E99C0E70070E53F /* BudgetDetailViewController.swift */; };
 		8163775F1E99C0E70070E53F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8163775D1E99C0E70070E53F /* Main.storyboard */; };
 		816377611E99C0E70070E53F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 816377601E99C0E70070E53F /* Assets.xcassets */; };
 		816377641E99C0E70070E53F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 816377621E99C0E70070E53F /* LaunchScreen.storyboard */; };
+		8163776C1E9C3AB80070E53F /* BudgetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8163776B1E9C3AB80070E53F /* BudgetCell.swift */; };
+		8163776E1E9C3E880070E53F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8163776D1E9C3E880070E53F /* Color.swift */; };
+		81902F101E9C4A3A003E5082 /* EditBudgetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81902F0F1E9C4A3A003E5082 /* EditBudgetTableViewController.swift */; };
+		81902F121E9C4BC3003E5082 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81902F111E9C4BC3003E5082 /* UIViewController+Extensions.swift */; };
+		81DA232A1E9C89B2001722C5 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DA23291E9C89B2001722C5 /* App.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4929BD3FB16224F47FEA3D5D /* Pods_StudentBudget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudentBudget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		816377511E99C0E70070E53F /* StudentBudget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudentBudget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		816377541E99C0E70070E53F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		816377571E99C0E70070E53F /* StudentBudget.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StudentBudget.xcdatamodel; sourceTree = "<group>"; };
-		816377591E99C0E70070E53F /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		8163775B1E99C0E70070E53F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		816377591E99C0E70070E53F /* BudgetsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetsTableViewController.swift; sourceTree = "<group>"; };
+		8163775B1E99C0E70070E53F /* BudgetDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailViewController.swift; sourceTree = "<group>"; };
 		8163775E1E99C0E70070E53F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		816377601E99C0E70070E53F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		816377631E99C0E70070E53F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		816377651E99C0E70070E53F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8163776B1E9C3AB80070E53F /* BudgetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetCell.swift; sourceTree = "<group>"; };
+		8163776D1E9C3E880070E53F /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		81902F0F1E9C4A3A003E5082 /* EditBudgetTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditBudgetTableViewController.swift; sourceTree = "<group>"; };
+		81902F111E9C4BC3003E5082 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		81CAC0CC1E9C50B60096A91A /* StudentBudget-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StudentBudget-Bridging-Header.h"; sourceTree = "<group>"; };
+		81DA23291E9C89B2001722C5 /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		AA8D4BC9C23E35AE8282D4F1 /* Pods-StudentBudget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudentBudget.release.xcconfig"; path = "Pods/Target Support Files/Pods-StudentBudget/Pods-StudentBudget.release.xcconfig"; sourceTree = "<group>"; };
+		C18A0817E4C5910124ED030F /* Pods-StudentBudget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudentBudget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StudentBudget/Pods-StudentBudget.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76AAAD967600EE3B043DF385 /* Pods_StudentBudget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +60,8 @@
 			children = (
 				816377531E99C0E70070E53F /* StudentBudget */,
 				816377521E99C0E70070E53F /* Products */,
+				EBFC71458ACF408E17319CC1 /* Pods */,
+				C3CBB9F248D218DE8D77CB1C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,16 +76,39 @@
 		816377531E99C0E70070E53F /* StudentBudget */ = {
 			isa = PBXGroup;
 			children = (
+				81DA23291E9C89B2001722C5 /* App.swift */,
 				816377541E99C0E70070E53F /* AppDelegate.swift */,
-				816377591E99C0E70070E53F /* MasterViewController.swift */,
-				8163775B1E99C0E70070E53F /* DetailViewController.swift */,
+				816377591E99C0E70070E53F /* BudgetsTableViewController.swift */,
+				8163776B1E9C3AB80070E53F /* BudgetCell.swift */,
+				81902F0F1E9C4A3A003E5082 /* EditBudgetTableViewController.swift */,
+				8163775B1E99C0E70070E53F /* BudgetDetailViewController.swift */,
+				8163776D1E9C3E880070E53F /* Color.swift */,
+				81902F111E9C4BC3003E5082 /* UIViewController+Extensions.swift */,
 				8163775D1E99C0E70070E53F /* Main.storyboard */,
-				816377601E99C0E70070E53F /* Assets.xcassets */,
 				816377621E99C0E70070E53F /* LaunchScreen.storyboard */,
+				816377601E99C0E70070E53F /* Assets.xcassets */,
 				816377651E99C0E70070E53F /* Info.plist */,
 				816377561E99C0E70070E53F /* StudentBudget.xcdatamodeld */,
+				81CAC0CC1E9C50B60096A91A /* StudentBudget-Bridging-Header.h */,
 			);
 			path = StudentBudget;
+			sourceTree = "<group>";
+		};
+		C3CBB9F248D218DE8D77CB1C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4929BD3FB16224F47FEA3D5D /* Pods_StudentBudget.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EBFC71458ACF408E17319CC1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C18A0817E4C5910124ED030F /* Pods-StudentBudget.debug.xcconfig */,
+				AA8D4BC9C23E35AE8282D4F1 /* Pods-StudentBudget.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +118,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 816377681E99C0E70070E53F /* Build configuration list for PBXNativeTarget "StudentBudget" */;
 			buildPhases = (
+				F1B1F6FDEF5124949E336E93 /* [CP] Check Pods Manifest.lock */,
 				8163774D1E99C0E70070E53F /* Sources */,
 				8163774E1E99C0E70070E53F /* Frameworks */,
 				8163774F1E99C0E70070E53F /* Resources */,
+				0573C8EA76B3BAFF67C8150E /* [CP] Embed Pods Frameworks */,
+				1515F59277494EE36E27987F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -138,15 +182,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0573C8EA76B3BAFF67C8150E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StudentBudget/Pods-StudentBudget-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1515F59277494EE36E27987F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StudentBudget/Pods-StudentBudget-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1B1F6FDEF5124949E336E93 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8163774D1E99C0E70070E53F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81DA232A1E9C89B2001722C5 /* App.swift in Sources */,
+				8163776C1E9C3AB80070E53F /* BudgetCell.swift in Sources */,
 				816377581E99C0E70070E53F /* StudentBudget.xcdatamodeld in Sources */,
 				816377551E99C0E70070E53F /* AppDelegate.swift in Sources */,
-				8163775A1E99C0E70070E53F /* MasterViewController.swift in Sources */,
-				8163775C1E99C0E70070E53F /* DetailViewController.swift in Sources */,
+				8163775A1E99C0E70070E53F /* BudgetsTableViewController.swift in Sources */,
+				81902F121E9C4BC3003E5082 /* UIViewController+Extensions.swift in Sources */,
+				8163775C1E99C0E70070E53F /* BudgetDetailViewController.swift in Sources */,
+				8163776E1E9C3E880070E53F /* Color.swift in Sources */,
+				81902F101E9C4A3A003E5082 /* EditBudgetTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +366,7 @@
 		};
 		816377691E99C0E70070E53F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C18A0817E4C5910124ED030F /* Pods-StudentBudget.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = P6WDVDEGP6;
@@ -282,6 +380,7 @@
 		};
 		8163776A1E99C0E70070E53F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA8D4BC9C23E35AE8282D4F1 /* Pods-StudentBudget.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = P6WDVDEGP6;
@@ -312,6 +411,7 @@
 				8163776A1E99C0E70070E53F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

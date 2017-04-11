@@ -1,0 +1,6 @@
+framework module Pods_StudentBudget {
+  umbrella header "Pods-StudentBudget-umbrella.h"
+
+  export *
+  module * { export * }
+}
