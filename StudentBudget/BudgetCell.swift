@@ -26,7 +26,7 @@ class BudgetCell: UITableViewCell {
         budgetTitleLabel.text = budget.title
         progressView.backgroundColor = UIColor(hex: budget.color!)
         let progressPercentage = budget.value / budget.maximum
-        progressViewWidth.constant = App.shared.window.frame.width * CGFloat(progressPercentage) + 10.0
+        progressViewWidth.constant = self.frame.width * CGFloat(progressPercentage) + 10.0
         if progressViewWidth.constant < 10 {
             progressViewWidth.constant = 10
         }

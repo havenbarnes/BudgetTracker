@@ -37,9 +37,19 @@ class BudgetsTableViewController: UITableViewController, NSFetchedResultsControl
     }
     
     func createNewBudget() {
+        
+            
         let createBudgetVC = instantiate("EditBudgetTableViewController") as! EditBudgetTableViewController
         createBudgetVC.context = self.fetchedResultsController.managedObjectContext
-        self.navigationController?.show(createBudgetVC, sender: nil)
+        
+        if splitViewController!.isCollapsed  {
+            self.navigationController?.show(createBudgetVC, sender: nil)
+            return
+        } else {
+            let secondaryNav = splitViewController?.viewControllers[1] as! UINavigationController
+            secondaryNav.viewControllers = [createBudgetVC]
+        }
+        
     }
     
     func startNewMonth() {

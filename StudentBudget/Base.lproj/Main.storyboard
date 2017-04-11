@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Master-->
+        <!--Budgets-->
         <scene sceneID="pY4-Hu-kfo">
             <objects>
-                <navigationController title="Master" id="RMx-3f-FxP" sceneMemberID="viewController">
+                <navigationController title="Budgets" id="RMx-3f-FxP" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translucent="NO" id="Pmd-2v-anx">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -133,6 +133,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Budgets" id="Zdf-7t-Un8">
+                        <barButtonItem key="backBarButtonItem" title="Budgets" id="woI-iv-1qB"/>
                         <barButtonItem key="leftBarButtonItem" enabled="NO" image="AuburnLogoSmall" id="deF-bd-Y9d"/>
                     </navigationItem>
                 </tableViewController>
@@ -148,6 +149,7 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <inset key="separatorInset" minX="26" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <sections>
                             <tableViewSection headerTitle="Budget Name" id="qSO-ru-hLo">
                                 <cells>
@@ -159,7 +161,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Budget Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qjR-b3-gjw">
-                                                    <rect key="frame" x="16" y="11" width="343" height="21"/>
+                                                    <rect key="frame" x="26" y="11" width="333" height="21"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -170,7 +172,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="qjR-b3-gjw" secondAttribute="trailing" constant="8" id="1bZ-js-Lg9"/>
-                                                <constraint firstItem="qjR-b3-gjw" firstAttribute="leading" secondItem="XTR-10-RNW" secondAttribute="leadingMargin" constant="8" id="XTL-6m-Vys"/>
+                                                <constraint firstItem="qjR-b3-gjw" firstAttribute="leading" secondItem="XTR-10-RNW" secondAttribute="leadingMargin" constant="18" id="XTL-6m-Vys"/>
                                                 <constraint firstItem="qjR-b3-gjw" firstAttribute="centerY" secondItem="XTR-10-RNW" secondAttribute="centerY" id="liO-wm-jxw"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -187,7 +189,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" minValue="1" maxValue="400" translatesAutoresizingMaskIntoConstraints="NO" id="9d4-sy-w7j">
-                                                    <rect key="frame" x="18" y="7" width="255" height="31"/>
+                                                    <rect key="frame" x="28" y="7" width="245" height="31"/>
                                                     <connections>
                                                         <action selector="budgetSliderValueChanged:" destination="Iaa-bv-UXq" eventType="valueChanged" id="14n-lw-Pxv"/>
                                                     </connections>
@@ -218,7 +220,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="i26-EX-oem" secondAttribute="trailing" id="4xs-fy-FAI"/>
                                                 <constraint firstItem="BLC-PR-YOw" firstAttribute="leading" secondItem="9d4-sy-w7j" secondAttribute="trailing" constant="12" id="5fa-RO-fqh"/>
                                                 <constraint firstItem="BLC-PR-YOw" firstAttribute="centerY" secondItem="SfZ-tV-JPw" secondAttribute="centerY" id="Kbw-8q-iUD"/>
-                                                <constraint firstItem="9d4-sy-w7j" firstAttribute="leading" secondItem="SfZ-tV-JPw" secondAttribute="leadingMargin" constant="12" id="Q5Q-ah-eLq"/>
+                                                <constraint firstItem="9d4-sy-w7j" firstAttribute="leading" secondItem="SfZ-tV-JPw" secondAttribute="leadingMargin" constant="22" id="Q5Q-ah-eLq"/>
                                                 <constraint firstItem="i26-EX-oem" firstAttribute="centerY" secondItem="SfZ-tV-JPw" secondAttribute="centerY" id="Uhf-38-ULr"/>
                                                 <constraint firstItem="9d4-sy-w7j" firstAttribute="centerY" secondItem="SfZ-tV-JPw" secondAttribute="centerY" id="kpa-y8-G8l"/>
                                                 <constraint firstItem="i26-EX-oem" firstAttribute="leading" secondItem="BLC-PR-YOw" secondAttribute="trailing" constant="4" id="wUd-dA-hXD"/>
@@ -237,7 +239,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="400" translatesAutoresizingMaskIntoConstraints="NO" id="FSO-2y-XYf">
-                                                    <rect key="frame" x="18" y="7" width="255" height="31"/>
+                                                    <rect key="frame" x="28" y="7" width="245" height="31"/>
                                                     <connections>
                                                         <action selector="valueSpentSliderValueChanged:" destination="Iaa-bv-UXq" eventType="valueChanged" id="b7J-ny-OIa"/>
                                                     </connections>
@@ -267,7 +269,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="sTX-ol-bhX" firstAttribute="leading" secondItem="7ge-w3-NBJ" secondAttribute="trailing" constant="4" id="FIe-cX-zDG"/>
-                                                <constraint firstItem="FSO-2y-XYf" firstAttribute="leading" secondItem="puO-9g-bwd" secondAttribute="leadingMargin" constant="12" id="I4Q-w0-Wmt"/>
+                                                <constraint firstItem="FSO-2y-XYf" firstAttribute="leading" secondItem="puO-9g-bwd" secondAttribute="leadingMargin" constant="22" id="I4Q-w0-Wmt"/>
                                                 <constraint firstItem="7ge-w3-NBJ" firstAttribute="centerY" secondItem="puO-9g-bwd" secondAttribute="centerY" id="Xo8-bF-AYE"/>
                                                 <constraint firstItem="sTX-ol-bhX" firstAttribute="centerY" secondItem="puO-9g-bwd" secondAttribute="centerY" id="n9p-Sd-oGm"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="sTX-ol-bhX" secondAttribute="trailing" id="t2e-Br-ayi"/>
@@ -556,10 +558,14 @@
         <scene sceneID="r7l-gg-dq7">
             <objects>
                 <navigationController id="vC3-pB-5Vb" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="DjV-YW-jjY">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translucent="NO" id="DjV-YW-jjY">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.01176470588" green="0.14117647059999999" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.94901960784313721" green="0.396078431372549" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="Iaa-bv-UXq" kind="relationship" relationship="rootViewController" id="Gri-Xn-bo9"/>

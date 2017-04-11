@@ -37,6 +37,7 @@ class EditBudgetTableViewController: UITableViewController, UITextFieldDelegate 
         self.valueSpentLabel.delegate = self
         guard budget != nil else {
             self.navigationItem.title = "New Budget"
+            self.titleField.text = ""
             budgetSliderValueChanged(budgetMaximumSlider)
             valueSpentSliderValueChanged(valueSpentSlider)
             return
@@ -93,6 +94,12 @@ class EditBudgetTableViewController: UITableViewController, UITextFieldDelegate 
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
+        if context == nil {
+            let mainNavigation = self.splitViewController?.viewControllers[0] as! UINavigationController
+            let mainTableViewController = mainNavigation.viewControllers.first! as! BudgetsTableViewController
+            context = mainTableViewController.fetchedResultsController.managedObjectContext
+        }
+        
         let budgetToBeSaved: Budget!
         if budget != nil {
             // Just update existing budget
@@ -105,7 +112,8 @@ class EditBudgetTableViewController: UITableViewController, UITextFieldDelegate 
         saveAndExit(budget: budgetToBeSaved)
     }
     
-    func saveAndExit(budget: Budget) {        
+    func saveAndExit(budget: Budget) {
+        
         if titleField.text?.replacingOccurrences(of: " ", with: "") != "" {
             budget.title = titleField.text
         } else {
@@ -126,6 +134,8 @@ class EditBudgetTableViewController: UITableViewController, UITextFieldDelegate 
         } else {
             self.navigationController!.popViewController(animated: true)
         }
+        
+        configureUI()
     }
     
     
