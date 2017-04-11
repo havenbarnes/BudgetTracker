@@ -37,6 +37,8 @@ class EditBudgetTableViewController: UITableViewController, UITextFieldDelegate 
         self.valueSpentLabel.delegate = self
         guard budget != nil else {
             self.navigationItem.title = "New Budget"
+            budgetSliderValueChanged(budgetMaximumSlider)
+            valueSpentSliderValueChanged(valueSpentSlider)
             return
         }
         
@@ -110,8 +112,10 @@ class EditBudgetTableViewController: UITableViewController, UITextFieldDelegate 
             budget.title = "New Budget"
         }
         
-        budget.maximum = Double(budgetMaximumSlider.value)
-        budget.value = Double(valueSpentSlider.value)
+        // Keep the slider input from being TOO precise
+        budget.maximum = Double(Int(budgetMaximumSlider.value))
+        budget.value = Double(Int(valueSpentSlider.value))
+        
         budget.color = Color.allValues[selectedColorIndex].rawValue
         
         // Save the context.

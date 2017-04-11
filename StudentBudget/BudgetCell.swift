@@ -34,15 +34,22 @@ class BudgetCell: UITableViewCell {
         let numberFormatter = NumberFormatter()
         numberFormatter.maximumFractionDigits = 2
         numberFormatter.minimumFractionDigits = 2
-        let leftToGoValue = NSNumber(value: (budget.maximum - budget.value))
-        self.toGoLabel.text = "$\(numberFormatter.string(from: leftToGoValue)!) Left To Spend"
         
-        UIView.animate(withDuration: 0.3, delay: 0.4, options: .curveEaseOut, animations: {
+        var leftToGoValue = NSNumber(value: (budget.maximum - budget.value))
+        if leftToGoValue.doubleValue < 0 {
+            leftToGoValue = 0
+        }
+        
+        UIView.animate(withDuration: 0.5, delay: 0.3, options: .curveEaseOut, animations: {
             self.layoutIfNeeded()
+            
+            self.toGoLabel.text = leftToGoValue == 0 ? "Budget Spent" : "$\(numberFormatter.string(from: leftToGoValue)!) Left To Spend"
         }, completion: nil)
     }
     
     @IBAction func updateButtonPressed(_ sender: Any) {
+        
+        guard !self.isEditing else { return }
         
         let tableView = self.superview!.superview! as! UITableView
         let tableViewController = tableView.dataSource as! BudgetsTableViewController

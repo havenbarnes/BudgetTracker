@@ -132,7 +132,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Budgets" id="Zdf-7t-Un8">
-                        <barButtonItem key="backBarButtonItem" title="Cancel" id="LJW-62-78V"/>
                         <barButtonItem key="leftBarButtonItem" enabled="NO" image="AuburnLogoSmall" id="deF-bd-Y9d"/>
                     </navigationItem>
                 </tableViewController>

@@ -21,9 +21,10 @@ class BudgetsTableViewController: UITableViewController, NSFetchedResultsControl
         
         self.tableView.emptyDataSetDelegate = self
         self.tableView.emptyDataSetSource = self
-                
+        
+        let newMonthButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(startNewMonth))
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createNewBudget))
-        navigationItem.rightBarButtonItem = addButton
+        navigationItem.rightBarButtonItems = [addButton, newMonthButton]
         if let split = splitViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? EditBudgetTableViewController
@@ -39,6 +40,29 @@ class BudgetsTableViewController: UITableViewController, NSFetchedResultsControl
         let createBudgetVC = instantiate("EditBudgetTableViewController") as! EditBudgetTableViewController
         createBudgetVC.context = self.fetchedResultsController.managedObjectContext
         self.navigationController?.show(createBudgetVC, sender: nil)
+    }
+    
+    func startNewMonth() {
+        guard fetchedResultsController.fetchedObjects != nil
+            && fetchedResultsController.fetchedObjects?.count != 0 else {
+            return
+        }
+        
+        let alert = UIAlertController(title: "Start A New Month?", message: "All Of Your Budgets Will Be Reset To Zero", preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "Reset Budgets", style: .destructive, handler: {
+            action in
+            
+            let budgets = self.fetchedResultsController.fetchedObjects ?? []
+            for budget in budgets {
+                budget.value = 0.0
+            }
+            try? self.fetchedResultsController.managedObjectContext.save()
+            
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
     // MARK: - Segues
@@ -134,7 +158,7 @@ class BudgetsTableViewController: UITableViewController, NSFetchedResultsControl
         fetchRequest.fetchBatchSize = 30
         
         // Edit the sort key as appropriate.
-        let sortDescriptor = NSSortDescriptor(key: "value", ascending: false)
+        let sortDescriptor = NSSortDescriptor(key: "maximum", ascending: true)
         
         fetchRequest.sortDescriptors = [sortDescriptor]
         
