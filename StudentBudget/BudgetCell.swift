@@ -13,6 +13,7 @@ class BudgetCell: UITableViewCell {
     @IBOutlet weak var progressView: UIView!
     @IBOutlet weak var progressViewWidth: NSLayoutConstraint!
     @IBOutlet weak var updateButton: UIButton!
+    @IBOutlet weak var toGoLabel: UILabel!
     
     var budget: Budget! {
         didSet {
@@ -23,12 +24,22 @@ class BudgetCell: UITableViewCell {
     func configureCell() {
         updateButton.layer.borderColor = UIColor.black.cgColor
         budgetTitleLabel.text = budget.title
-        let progressPercentage = budget.value / budget.maximum
         progressView.backgroundColor = UIColor(hex: budget.color!)
+        let progressPercentage = budget.value / budget.maximum
         progressViewWidth.constant = App.shared.window.frame.width * CGFloat(progressPercentage) + 10.0
-        UIView.animate(withDuration: 0.3, animations: {
+        if progressViewWidth.constant < 10 {
+            progressViewWidth.constant = 10
+        }
+        
+        let numberFormatter = NumberFormatter()
+        numberFormatter.maximumFractionDigits = 2
+        numberFormatter.minimumFractionDigits = 2
+        let leftToGoValue = NSNumber(value: (budget.maximum - budget.value))
+        self.toGoLabel.text = "$\(numberFormatter.string(from: leftToGoValue)!) Left To Spend"
+        
+        UIView.animate(withDuration: 0.3, delay: 0.4, options: .curveEaseOut, animations: {
             self.layoutIfNeeded()
-        })
+        }, completion: nil)
     }
     
     @IBAction func updateButtonPressed(_ sender: Any) {
@@ -39,7 +50,12 @@ class BudgetCell: UITableViewCell {
         let alert = UIAlertController(title: "How much did you spend?", message: nil, preferredStyle: .alert)
         
         alert.addTextField { (textField) in
-            textField.placeholder = ""
+            let dollarLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 16, height: 20))
+            dollarLabel.text = "$"
+            dollarLabel.contentMode = .center
+            textField.leftViewMode = .always
+            textField.leftView = dollarLabel
+            textField.placeholder = "0.00"
             textField.keyboardType = .decimalPad
             textField.font = UIFont(name: ".SFUIDisplay-Semibold", size: 20)!
             textField.borderStyle = .none

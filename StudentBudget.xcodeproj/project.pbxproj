@@ -11,7 +11,6 @@
 		816377551E99C0E70070E53F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816377541E99C0E70070E53F /* AppDelegate.swift */; };
 		816377581E99C0E70070E53F /* StudentBudget.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 816377561E99C0E70070E53F /* StudentBudget.xcdatamodeld */; };
 		8163775A1E99C0E70070E53F /* BudgetsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816377591E99C0E70070E53F /* BudgetsTableViewController.swift */; };
-		8163775C1E99C0E70070E53F /* BudgetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8163775B1E99C0E70070E53F /* BudgetDetailViewController.swift */; };
 		8163775F1E99C0E70070E53F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8163775D1E99C0E70070E53F /* Main.storyboard */; };
 		816377611E99C0E70070E53F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 816377601E99C0E70070E53F /* Assets.xcassets */; };
 		816377641E99C0E70070E53F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 816377621E99C0E70070E53F /* LaunchScreen.storyboard */; };
@@ -28,7 +27,6 @@
 		816377541E99C0E70070E53F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		816377571E99C0E70070E53F /* StudentBudget.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StudentBudget.xcdatamodel; sourceTree = "<group>"; };
 		816377591E99C0E70070E53F /* BudgetsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetsTableViewController.swift; sourceTree = "<group>"; };
-		8163775B1E99C0E70070E53F /* BudgetDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailViewController.swift; sourceTree = "<group>"; };
 		8163775E1E99C0E70070E53F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		816377601E99C0E70070E53F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		816377631E99C0E70070E53F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -81,7 +79,6 @@
 				816377591E99C0E70070E53F /* BudgetsTableViewController.swift */,
 				8163776B1E9C3AB80070E53F /* BudgetCell.swift */,
 				81902F0F1E9C4A3A003E5082 /* EditBudgetTableViewController.swift */,
-				8163775B1E99C0E70070E53F /* BudgetDetailViewController.swift */,
 				8163776D1E9C3E880070E53F /* Color.swift */,
 				81902F111E9C4BC3003E5082 /* UIViewController+Extensions.swift */,
 				8163775D1E99C0E70070E53F /* Main.storyboard */,
@@ -241,7 +238,6 @@
 				816377551E99C0E70070E53F /* AppDelegate.swift in Sources */,
 				8163775A1E99C0E70070E53F /* BudgetsTableViewController.swift in Sources */,
 				81902F121E9C4BC3003E5082 /* UIViewController+Extensions.swift in Sources */,
-				8163775C1E99C0E70070E53F /* BudgetDetailViewController.swift in Sources */,
 				8163776E1E9C3E880070E53F /* Color.swift in Sources */,
 				81902F101E9C4A3A003E5082 /* EditBudgetTableViewController.swift in Sources */,
 			);

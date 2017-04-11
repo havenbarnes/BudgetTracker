@@ -9,10 +9,10 @@
 import CoreData
 import UIKit
 
-class EditBudgetTableViewController: UITableViewController {
+class EditBudgetTableViewController: UITableViewController, UITextFieldDelegate {
     
     var budget: Budget?
-
+    
     var selectedColorIndex: Int = 0
     var context: NSManagedObjectContext!
     
@@ -24,17 +24,66 @@ class EditBudgetTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configureUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setSelectedColor()
+    }
+    
+    func configureUI() {
+        self.valueSpentLabel.delegate = self
+        guard budget != nil else {
+            self.navigationItem.title = "New Budget"
+            return
+        }
+        
+        self.navigationItem.title = budget!.title
+        self.titleField.text = budget!.title
+        self.budgetMaximumSlider.value = Float(budget!.maximum)
+        self.valueSpentSlider.value = Float(budget!.value)
+        
+        budgetSliderValueChanged(budgetMaximumSlider)
+        valueSpentSliderValueChanged(valueSpentSlider)
+    }
+    
+    func setSelectedColor() {
+        guard budget != nil else {
+            return
+        }
+        
+        for index in 0..<Color.allValues.count {
+            let color = Color.allValues[index]
+            if budget!.color! == color.rawValue {
+                selectedColorIndex = index
+                let indexPath = IndexPath(row: index, section: 3)
+                tableView(tableView, didSelectRowAt: indexPath)
+            }
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard indexPath.section == 3 else {
+            return
+        }
+        if indexPath.row == selectedColorIndex {
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
+        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard indexPath.section == 2 else {
+        guard indexPath.section == 3 else {
             return
         }
-        let oldSelectedIndexPath = IndexPath(row: selectedColorIndex, section: 2)
+        let oldSelectedIndexPath = IndexPath(row: selectedColorIndex, section: 3)
         let oldSelectedCell = self.tableView.cellForRow(at: oldSelectedIndexPath)
         oldSelectedCell?.accessoryType = .none
         
-        let selectedIndexPath = IndexPath(row: indexPath.row, section: 2)
+        let selectedIndexPath = IndexPath(row: indexPath.row, section: 3)
         let selectedCell = self.tableView.cellForRow(at: selectedIndexPath)
         selectedCell?.accessoryType = .checkmark
         
@@ -42,34 +91,39 @@ class EditBudgetTableViewController: UITableViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
-        createBudget()
+        let budgetToBeSaved: Budget!
+        if budget != nil {
+            // Just update existing budget
+            budgetToBeSaved = budget
+            budgetToBeSaved.dateUpdated = Date() as NSDate
+        } else {
+            budgetToBeSaved = Budget(context: context)
+            budgetToBeSaved.dateCreated = Date() as NSDate
+        }
+        saveAndExit(budget: budgetToBeSaved)
     }
     
-    func createBudget() {
-        let newBudget = Budget(context: context)
-        
-        // If appropriate, configure the new managed object.
-        newBudget.dateCreated = NSDate()
-        
+    func saveAndExit(budget: Budget) {        
         if titleField.text?.replacingOccurrences(of: " ", with: "") != "" {
-            newBudget.title = titleField.text
+            budget.title = titleField.text
         } else {
-            newBudget.title = "New Budget"
+            budget.title = "New Budget"
         }
         
-        newBudget.maximum = Double(budgetMaximumSlider.value)
-        newBudget.color = Color.allValues[selectedColorIndex].rawValue
+        budget.maximum = Double(budgetMaximumSlider.value)
+        budget.value = Double(valueSpentSlider.value)
+        budget.color = Color.allValues[selectedColorIndex].rawValue
         
         // Save the context.
-        do {
-            try context.save()
-        } catch {
-            let nserror = error as NSError
-            debugPrint("Error Saving Context: \(nserror)")
-        }
+        try? context.save()
         
-        self.navigationController?.popViewController(animated: true)
+        if self.budget != nil {
+            self.navigationController?.navigationController?.popViewController(animated: true)
+        } else {
+            self.navigationController!.popViewController(animated: true)
+        }
     }
+    
     
     @IBAction func budgetTitleValueChanged(_ sender: Any) {
         if self.titleField.text?.replacingOccurrences(of: " ", with: "") != "" {
@@ -80,8 +134,17 @@ class EditBudgetTableViewController: UITableViewController {
     }
     
     @IBAction func budgetSliderValueChanged(_ sender: Any) {
+        
         let numberFormatter = NumberFormatter()
         numberFormatter.maximumFractionDigits = 0
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.valueSpentSlider.maximumValue = self.budgetMaximumSlider.value
+            
+            if Float(self.valueSpentLabel.text!)! > self.budgetMaximumSlider.value {
+                self.valueSpentLabel.text = numberFormatter.string(from: NSNumber(value: self.budgetMaximumSlider.value))
+            }
+        })
         
         self.budgetMaximumLabel.text = numberFormatter.string(from: NSNumber(value: budgetMaximumSlider.value))
     }
@@ -90,7 +153,26 @@ class EditBudgetTableViewController: UITableViewController {
         guard Float(budgetMaximumLabel.text!) != nil else {
             return }
         self.budgetMaximumSlider.value = Float(budgetMaximumLabel.text!)!
+        budgetSliderValueChanged(sender)
     }
     
+    @IBAction func valueSpentSliderValueChanged(_ sender: Any) {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.maximumFractionDigits = 0
+        
+        self.valueSpentLabel.text = numberFormatter.string(from: NSNumber(value: valueSpentSlider.value))
+    }
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if valueSpentLabel.text!.characters.count - range.length + string.characters.count > 6 {
+            return false
+        }
+        return true
+    }
+    
+    @IBAction func valueSpentFieldValueChanged(_ sender: Any) {
+        guard Float(valueSpentLabel.text!) != nil else {
+            return }
+        self.valueSpentSlider.value = Float(valueSpentLabel.text!)!
+    }
 }

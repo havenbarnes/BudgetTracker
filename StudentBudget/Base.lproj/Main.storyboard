@@ -31,43 +31,6 @@
             </objects>
             <point key="canvasLocation" x="-38" y="-630"/>
         </scene>
-        <!--Detail-->
-        <scene sceneID="yUG-lL-AsK">
-            <objects>
-                <viewController title="Detail" id="JEX-9P-axG" customClass="DetailViewController" customModule="StudentBudget" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="SYR-Wa-9uf"/>
-                        <viewControllerLayoutGuide type="bottom" id="GAO-Cl-Wes"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="svH-Pt-448">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0XM-y9-sOw">
-                                <rect key="frame" x="20" y="333.5" width="335" height="0.0"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" size="system"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="0XM-y9-sOw" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" constant="20" symbolic="YES" id="Tsc-yG-G1q"/>
-                            <constraint firstItem="0XM-y9-sOw" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="jWN-iV-94e"/>
-                            <constraint firstAttribute="trailing" secondItem="0XM-y9-sOw" secondAttribute="trailing" constant="20" symbolic="YES" id="tHV-ZD-HQj"/>
-                        </constraints>
-                    </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Budget Title" id="mOI-FS-AaM"/>
-                    <connections>
-                        <outlet property="detailDescriptionLabel" destination="0XM-y9-sOw" id="deQ-Na-JPF"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="709" y="129"/>
-        </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
             <objects>
@@ -91,7 +54,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BudgetCell" id="8hz-yW-gVd" customClass="BudgetCell" customModule="StudentBudget" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BudgetCell" id="8hz-yW-gVd" customClass="BudgetCell" customModule="StudentBudget" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="22" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8hz-yW-gVd" id="7oo-qq-Xuv">
@@ -99,48 +62,56 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l1v-ol-rPS" userLabel="Progress View">
-                                            <rect key="frame" x="0.0" y="0.0" width="322" height="70"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="10" height="70"/>
                                             <color key="backgroundColor" red="0.94901960780000005" green="0.39607843139999999" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="322" id="Lwh-Xa-k9K"/>
+                                                <constraint firstAttribute="width" constant="10" id="Lwh-Xa-k9K"/>
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Budget Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NPb-hv-1g3">
-                                            <rect key="frame" x="16" y="25" width="117.5" height="21"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <rect key="frame" x="16" y="15" width="130.5" height="24"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RRf-OS-aoc" userLabel="Update">
-                                            <rect key="frame" x="290" y="17" width="36" height="36"/>
+                                            <rect key="frame" x="304" y="20" width="30" height="30"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="36" id="R2H-9r-Is2"/>
-                                                <constraint firstAttribute="height" constant="36" id="cds-At-fdH"/>
+                                                <constraint firstAttribute="width" constant="30" id="R2H-9r-Is2"/>
+                                                <constraint firstAttribute="height" constant="30" id="cds-At-fdH"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                             <state key="normal" title="$">
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                    <integer key="value" value="18"/>
+                                                    <integer key="value" value="15"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                    <integer key="value" value="1"/>
+                                                    <integer key="value" value="2"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <action selector="updateButtonPressed:" destination="8hz-yW-gVd" eventType="touchUpInside" id="bKX-qs-k8d"/>
                                             </connections>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ihg-3Q-jYM">
+                                            <rect key="frame" x="18" y="41" width="35.5" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="RRf-OS-aoc" secondAttribute="trailing" constant="8" id="Vde-FU-Dlp"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="RRf-OS-aoc" secondAttribute="trailing" id="Vde-FU-Dlp"/>
                                         <constraint firstItem="l1v-ol-rPS" firstAttribute="height" secondItem="7oo-qq-Xuv" secondAttribute="height" id="Z0j-W5-Vha"/>
                                         <constraint firstItem="NPb-hv-1g3" firstAttribute="leading" secondItem="7oo-qq-Xuv" secondAttribute="leadingMargin" constant="8" id="d2K-z8-eu6"/>
                                         <constraint firstItem="RRf-OS-aoc" firstAttribute="centerY" secondItem="7oo-qq-Xuv" secondAttribute="centerY" id="ehK-xl-xFn"/>
+                                        <constraint firstItem="Ihg-3Q-jYM" firstAttribute="leading" secondItem="7oo-qq-Xuv" secondAttribute="leadingMargin" constant="10" id="hAk-zr-Eqj"/>
                                         <constraint firstItem="l1v-ol-rPS" firstAttribute="leading" secondItem="7oo-qq-Xuv" secondAttribute="leading" id="hdL-Re-bIC"/>
-                                        <constraint firstItem="NPb-hv-1g3" firstAttribute="centerY" secondItem="7oo-qq-Xuv" secondAttribute="centerY" id="zgW-f2-bhL"/>
+                                        <constraint firstItem="Ihg-3Q-jYM" firstAttribute="top" secondItem="NPb-hv-1g3" secondAttribute="bottom" constant="2" id="tiP-5S-ZwX"/>
+                                        <constraint firstItem="NPb-hv-1g3" firstAttribute="centerY" secondItem="7oo-qq-Xuv" secondAttribute="centerY" constant="-8" id="zgW-f2-bhL"/>
                                         <constraint firstItem="l1v-ol-rPS" firstAttribute="centerY" secondItem="7oo-qq-Xuv" secondAttribute="centerY" id="zlP-Aj-Rw8"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -148,6 +119,7 @@
                                     <outlet property="budgetTitleLabel" destination="NPb-hv-1g3" id="Kwl-gq-JgP"/>
                                     <outlet property="progressView" destination="l1v-ol-rPS" id="OXo-rV-1vH"/>
                                     <outlet property="progressViewWidth" destination="Lwh-Xa-k9K" id="IJT-bw-hmO"/>
+                                    <outlet property="toGoLabel" destination="Ihg-3Q-jYM" id="8PK-uc-D6k"/>
                                     <outlet property="updateButton" destination="RRf-OS-aoc" id="mCM-tw-fkl"/>
                                     <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetail" id="xjz-Cw-ZnS"/>
                                 </connections>
@@ -161,22 +133,23 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Budgets" id="Zdf-7t-Un8">
                         <barButtonItem key="backBarButtonItem" title="Cancel" id="LJW-62-78V"/>
+                        <barButtonItem key="leftBarButtonItem" enabled="NO" image="AuburnLogoSmall" id="deF-bd-Y9d"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="742" y="-630"/>
         </scene>
-        <!--New Budget-->
+        <!--Edit Budget Table View Controller-->
         <scene sceneID="2mV-B5-5kz">
             <objects>
                 <tableViewController storyboardIdentifier="EditBudgetTableViewController" clearsSelectionOnViewWillAppear="NO" id="Iaa-bv-UXq" customClass="EditBudgetTableViewController" customModule="StudentBudget" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="FW5-d0-tzt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="Enter A Name For The Budget" id="qSO-ru-hLo">
+                            <tableViewSection headerTitle="Budget Name" id="qSO-ru-hLo">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Irg-sI-6AP">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
@@ -213,14 +186,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="400" translatesAutoresizingMaskIntoConstraints="NO" id="9d4-sy-w7j">
-                                                    <rect key="frame" x="18" y="7" width="259" height="31"/>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" minValue="1" maxValue="400" translatesAutoresizingMaskIntoConstraints="NO" id="9d4-sy-w7j">
+                                                    <rect key="frame" x="18" y="7" width="255" height="31"/>
                                                     <connections>
                                                         <action selector="budgetSliderValueChanged:" destination="Iaa-bv-UXq" eventType="valueChanged" id="14n-lw-Pxv"/>
                                                     </connections>
                                                 </slider>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLC-PR-YOw">
-                                                    <rect key="frame" x="287" y="11" width="10" height="21"/>
+                                                    <rect key="frame" x="283" y="11" width="10" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="10" id="BjX-9J-6Rw"/>
                                                     </constraints>
@@ -228,7 +201,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="24" textAlignment="right" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="i26-EX-oem">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="20" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="i26-EX-oem">
                                                     <rect key="frame" x="297" y="-0.5" width="70" height="45"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="AqM-ME-pWh"/>
@@ -248,7 +221,7 @@
                                                 <constraint firstItem="9d4-sy-w7j" firstAttribute="leading" secondItem="SfZ-tV-JPw" secondAttribute="leadingMargin" constant="12" id="Q5Q-ah-eLq"/>
                                                 <constraint firstItem="i26-EX-oem" firstAttribute="centerY" secondItem="SfZ-tV-JPw" secondAttribute="centerY" id="Uhf-38-ULr"/>
                                                 <constraint firstItem="9d4-sy-w7j" firstAttribute="centerY" secondItem="SfZ-tV-JPw" secondAttribute="centerY" id="kpa-y8-G8l"/>
-                                                <constraint firstItem="i26-EX-oem" firstAttribute="leading" secondItem="BLC-PR-YOw" secondAttribute="trailing" id="wUd-dA-hXD"/>
+                                                <constraint firstItem="i26-EX-oem" firstAttribute="leading" secondItem="BLC-PR-YOw" secondAttribute="trailing" constant="4" id="wUd-dA-hXD"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -263,14 +236,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="400" translatesAutoresizingMaskIntoConstraints="NO" id="FSO-2y-XYf">
-                                                    <rect key="frame" x="18" y="7" width="259" height="31"/>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="400" translatesAutoresizingMaskIntoConstraints="NO" id="FSO-2y-XYf">
+                                                    <rect key="frame" x="18" y="7" width="255" height="31"/>
                                                     <connections>
-                                                        <action selector="budgetSliderValueChanged:" destination="Iaa-bv-UXq" eventType="valueChanged" id="qPN-hI-34m"/>
+                                                        <action selector="valueSpentSliderValueChanged:" destination="Iaa-bv-UXq" eventType="valueChanged" id="b7J-ny-OIa"/>
                                                     </connections>
                                                 </slider>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ge-w3-NBJ">
-                                                    <rect key="frame" x="287" y="11" width="10" height="21"/>
+                                                    <rect key="frame" x="283" y="11" width="10" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="10" id="I4p-0D-6IC"/>
                                                     </constraints>
@@ -278,21 +251,22 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" textAlignment="right" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="sTX-ol-bhX">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="sTX-ol-bhX">
                                                     <rect key="frame" x="297" y="-0.5" width="70" height="45"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="2oR-AM-glG"/>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="37"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     <connections>
                                                         <action selector="budgetFieldValueChanged:" destination="Iaa-bv-UXq" eventType="editingChanged" id="dGV-Uk-CCI"/>
+                                                        <action selector="valueSpentFieldValueChanged:" destination="Iaa-bv-UXq" eventType="editingChanged" id="jtH-yy-Ob4"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="sTX-ol-bhX" firstAttribute="leading" secondItem="7ge-w3-NBJ" secondAttribute="trailing" id="FIe-cX-zDG"/>
+                                                <constraint firstItem="sTX-ol-bhX" firstAttribute="leading" secondItem="7ge-w3-NBJ" secondAttribute="trailing" constant="4" id="FIe-cX-zDG"/>
                                                 <constraint firstItem="FSO-2y-XYf" firstAttribute="leading" secondItem="puO-9g-bwd" secondAttribute="leadingMargin" constant="12" id="I4Q-w0-Wmt"/>
                                                 <constraint firstItem="7ge-w3-NBJ" firstAttribute="centerY" secondItem="puO-9g-bwd" secondAttribute="centerY" id="Xo8-bF-AYE"/>
                                                 <constraint firstItem="sTX-ol-bhX" firstAttribute="centerY" secondItem="puO-9g-bwd" secondAttribute="centerY" id="n9p-Sd-oGm"/>
@@ -306,11 +280,11 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Pick A Budget Color" id="l9R-Sw-Eqc">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="checkmark" indentationWidth="10" editingAccessoryType="checkmark" rowHeight="50" id="25U-eW-Z4k">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" editingAccessoryType="checkmark" rowHeight="50" id="25U-eW-Z4k">
                                         <rect key="frame" x="0.0" y="373.5" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="25U-eW-Z4k" id="hgT-cm-BMC">
-                                            <rect key="frame" x="0.0" y="0.0" width="336" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3J2-aY-wKQ">
@@ -554,7 +528,8 @@
                             <outlet property="delegate" destination="Iaa-bv-UXq" id="CLU-tU-Jyg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="New Budget" id="4an-5y-Rvi">
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" id="4an-5y-Rvi">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="Sy1-vl-LRW">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -575,7 +550,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jAq-99-0ew" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1536.8" y="-630.13493253373315"/>
+            <point key="canvasLocation" x="742" y="188"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">
@@ -587,7 +562,7 @@
                         <color key="barTintColor" red="0.01176470588" green="0.14117647059999999" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="JEX-9P-axG" kind="relationship" relationship="rootViewController" id="GKi-kA-LjT"/>
+                        <segue destination="Iaa-bv-UXq" kind="relationship" relationship="rootViewController" id="Gri-Xn-bo9"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLD-UC-DBI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -595,6 +570,9 @@
             <point key="canvasLocation" x="-45" y="129"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AuburnLogoSmall" width="25" height="22"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="xjz-Cw-ZnS"/>
     </inferredMetricsTieBreakers>

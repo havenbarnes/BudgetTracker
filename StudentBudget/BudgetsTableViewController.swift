@@ -12,24 +12,21 @@ import DZNEmptyDataSet
 
 class BudgetsTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     
-    var detailViewController: DetailViewController? = nil
+    var detailViewController: EditBudgetTableViewController? = nil
     var managedObjectContext: NSManagedObjectContext? = nil
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         self.tableView.emptyDataSetDelegate = self
         self.tableView.emptyDataSetSource = self
-        
-        navigationItem.leftBarButtonItem = editButtonItem
-        
+                
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createNewBudget))
         navigationItem.rightBarButtonItem = addButton
         if let split = splitViewController {
             let controllers = split.viewControllers
-            detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
+            detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? EditBudgetTableViewController
         }
     }
     
@@ -50,8 +47,9 @@ class BudgetsTableViewController: UITableViewController, NSFetchedResultsControl
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let object = fetchedResultsController.object(at: indexPath)
-                let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
+                let controller = (segue.destination as! UINavigationController).topViewController as! EditBudgetTableViewController
                 controller.budget = object
+                controller.context = self.fetchedResultsController.managedObjectContext
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
@@ -133,10 +131,10 @@ class BudgetsTableViewController: UITableViewController, NSFetchedResultsControl
         let fetchRequest: NSFetchRequest<Budget> = Budget.fetchRequest()
         
         // Set the batch size to a suitable number.
-        fetchRequest.fetchBatchSize = 20
+        fetchRequest.fetchBatchSize = 30
         
         // Edit the sort key as appropriate.
-        let sortDescriptor = NSSortDescriptor(key: "dateCreated", ascending: false)
+        let sortDescriptor = NSSortDescriptor(key: "value", ascending: false)
         
         fetchRequest.sortDescriptors = [sortDescriptor]
         
