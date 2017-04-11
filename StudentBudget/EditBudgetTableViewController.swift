@@ -151,7 +151,8 @@ class EditBudgetTableViewController: UITableViewController, UITextFieldDelegate 
         UIView.animate(withDuration: 0.3, animations: {
             self.valueSpentSlider.maximumValue = self.budgetMaximumSlider.value
             
-            if Float(self.valueSpentLabel.text!)! > self.budgetMaximumSlider.value {
+            if Float(self.valueSpentLabel.text!) != nil
+                && Float(self.valueSpentLabel.text!)! > self.budgetMaximumSlider.value {
                 self.valueSpentLabel.text = String(describing: Int(self.budgetMaximumSlider.value))
             }
         })
