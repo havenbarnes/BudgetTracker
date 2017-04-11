@@ -37,8 +37,6 @@ class BudgetsTableViewController: UITableViewController, NSFetchedResultsControl
     }
     
     func createNewBudget() {
-        
-            
         let createBudgetVC = instantiate("EditBudgetTableViewController") as! EditBudgetTableViewController
         createBudgetVC.context = self.fetchedResultsController.managedObjectContext
         
@@ -49,7 +47,6 @@ class BudgetsTableViewController: UITableViewController, NSFetchedResultsControl
             let secondaryNav = splitViewController?.viewControllers[1] as! UINavigationController
             secondaryNav.viewControllers = [createBudgetVC]
         }
-        
     }
     
     func startNewMonth() {
@@ -58,7 +55,7 @@ class BudgetsTableViewController: UITableViewController, NSFetchedResultsControl
             return
         }
         
-        let alert = UIAlertController(title: "Start A New Month?", message: "All Of Your Budgets Will Be Reset To Zero", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Start A New Month?", message: "All Of Your Budgets Will Be Reset", preferredStyle: UIAlertControllerStyle.alert)
         
         alert.addAction(UIAlertAction(title: "Reset Budgets", style: .destructive, handler: {
             action in
@@ -71,7 +68,6 @@ class BudgetsTableViewController: UITableViewController, NSFetchedResultsControl
             
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        
         self.present(alert, animated: true, completion: nil)
     }
     
@@ -168,7 +164,7 @@ class BudgetsTableViewController: UITableViewController, NSFetchedResultsControl
         fetchRequest.fetchBatchSize = 30
         
         // Edit the sort key as appropriate.
-        let sortDescriptor = NSSortDescriptor(key: "maximum", ascending: true)
+        let sortDescriptor = NSSortDescriptor(key: "maximum", ascending: false)
         
         fetchRequest.sortDescriptors = [sortDescriptor]
         

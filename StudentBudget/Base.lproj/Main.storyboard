@@ -69,8 +69,8 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Budget Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="NPb-hv-1g3">
-                                            <rect key="frame" x="16" y="15" width="274" height="24"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <rect key="frame" x="16" y="14.5" width="274" height="25.5"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -97,7 +97,7 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ihg-3Q-jYM">
-                                            <rect key="frame" x="18" y="41" width="35.5" height="17"/>
+                                            <rect key="frame" x="16" y="40" width="35.5" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -110,9 +110,9 @@
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="l1v-ol-rPS" secondAttribute="trailing" constant="-40" id="ZWe-Rb-3W3"/>
                                         <constraint firstItem="NPb-hv-1g3" firstAttribute="leading" secondItem="7oo-qq-Xuv" secondAttribute="leadingMargin" constant="8" id="d2K-z8-eu6"/>
                                         <constraint firstItem="RRf-OS-aoc" firstAttribute="centerY" secondItem="7oo-qq-Xuv" secondAttribute="centerY" id="ehK-xl-xFn"/>
-                                        <constraint firstItem="Ihg-3Q-jYM" firstAttribute="leading" secondItem="7oo-qq-Xuv" secondAttribute="leadingMargin" constant="10" id="hAk-zr-Eqj"/>
+                                        <constraint firstItem="Ihg-3Q-jYM" firstAttribute="leading" secondItem="7oo-qq-Xuv" secondAttribute="leadingMargin" constant="8" id="hAk-zr-Eqj"/>
                                         <constraint firstItem="l1v-ol-rPS" firstAttribute="leading" secondItem="7oo-qq-Xuv" secondAttribute="leading" id="hdL-Re-bIC"/>
-                                        <constraint firstItem="Ihg-3Q-jYM" firstAttribute="top" secondItem="NPb-hv-1g3" secondAttribute="bottom" constant="2" id="tiP-5S-ZwX"/>
+                                        <constraint firstItem="Ihg-3Q-jYM" firstAttribute="top" secondItem="NPb-hv-1g3" secondAttribute="bottom" id="tiP-5S-ZwX"/>
                                         <constraint firstItem="NPb-hv-1g3" firstAttribute="centerY" secondItem="7oo-qq-Xuv" secondAttribute="centerY" constant="-8" id="zgW-f2-bhL"/>
                                         <constraint firstItem="l1v-ol-rPS" firstAttribute="centerY" secondItem="7oo-qq-Xuv" secondAttribute="centerY" id="zlP-Aj-Rw8"/>
                                     </constraints>
