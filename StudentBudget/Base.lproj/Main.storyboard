@@ -161,10 +161,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Budget Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qjR-b3-gjw">
-                                                    <rect key="frame" x="26" y="11" width="333" height="21"/>
+                                                    <rect key="frame" x="25" y="11" width="334" height="21"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                     <connections>
                                                         <action selector="budgetTitleValueChanged:" destination="Iaa-bv-UXq" eventType="editingChanged" id="mUP-XN-cxE"/>
                                                     </connections>
@@ -172,7 +172,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="qjR-b3-gjw" secondAttribute="trailing" constant="8" id="1bZ-js-Lg9"/>
-                                                <constraint firstItem="qjR-b3-gjw" firstAttribute="leading" secondItem="XTR-10-RNW" secondAttribute="leadingMargin" constant="18" id="XTL-6m-Vys"/>
+                                                <constraint firstItem="qjR-b3-gjw" firstAttribute="leading" secondItem="XTR-10-RNW" secondAttribute="leadingMargin" constant="17" id="XTL-6m-Vys"/>
                                                 <constraint firstItem="qjR-b3-gjw" firstAttribute="centerY" secondItem="XTR-10-RNW" secondAttribute="centerY" id="liO-wm-jxw"/>
                                             </constraints>
                                         </tableViewCellContentView>

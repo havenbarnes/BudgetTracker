@@ -68,7 +68,9 @@ class BudgetCell: UITableViewCell {
             textField.borderStyle = .none
         }
         
-        alert.addAction(UIAlertAction(title: "Done", style: .default, handler: { (_) in
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        alert.addAction(UIAlertAction(title: "Spend", style: .default, handler: { (_) in
             
             if let addedAmount = Double(alert.textFields![0].text!) {
                 self.budget.value += addedAmount
