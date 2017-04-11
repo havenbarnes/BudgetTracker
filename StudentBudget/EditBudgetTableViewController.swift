@@ -138,19 +138,15 @@ class EditBudgetTableViewController: UITableViewController, UITextFieldDelegate 
     }
     
     @IBAction func budgetSliderValueChanged(_ sender: Any) {
-        
-        let numberFormatter = NumberFormatter()
-        numberFormatter.maximumFractionDigits = 0
-        
         UIView.animate(withDuration: 0.3, animations: {
             self.valueSpentSlider.maximumValue = self.budgetMaximumSlider.value
             
             if Float(self.valueSpentLabel.text!)! > self.budgetMaximumSlider.value {
-                self.valueSpentLabel.text = numberFormatter.string(from: NSNumber(value: self.budgetMaximumSlider.value))
+                self.valueSpentLabel.text = String(describing: Int(self.budgetMaximumSlider.value))
             }
         })
         
-        self.budgetMaximumLabel.text = numberFormatter.string(from: NSNumber(value: budgetMaximumSlider.value))
+        self.budgetMaximumLabel.text = String(describing: Int(budgetMaximumSlider.value))
     }
     
     @IBAction func budgetFieldValueChanged(_ sender: Any) {
@@ -161,10 +157,7 @@ class EditBudgetTableViewController: UITableViewController, UITextFieldDelegate 
     }
     
     @IBAction func valueSpentSliderValueChanged(_ sender: Any) {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.maximumFractionDigits = 0
-        
-        self.valueSpentLabel.text = numberFormatter.string(from: NSNumber(value: valueSpentSlider.value))
+        self.valueSpentLabel.text = String(describing: Int(valueSpentSlider.value))
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

@@ -106,6 +106,7 @@
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="RRf-OS-aoc" secondAttribute="trailing" id="Vde-FU-Dlp"/>
                                         <constraint firstItem="l1v-ol-rPS" firstAttribute="height" secondItem="7oo-qq-Xuv" secondAttribute="height" id="Z0j-W5-Vha"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="l1v-ol-rPS" secondAttribute="trailing" constant="-40" id="ZWe-Rb-3W3"/>
                                         <constraint firstItem="NPb-hv-1g3" firstAttribute="leading" secondItem="7oo-qq-Xuv" secondAttribute="leadingMargin" constant="8" id="d2K-z8-eu6"/>
                                         <constraint firstItem="RRf-OS-aoc" firstAttribute="centerY" secondItem="7oo-qq-Xuv" secondAttribute="centerY" id="ehK-xl-xFn"/>
                                         <constraint firstItem="Ihg-3Q-jYM" firstAttribute="leading" secondItem="7oo-qq-Xuv" secondAttribute="leadingMargin" constant="10" id="hAk-zr-Eqj"/>
