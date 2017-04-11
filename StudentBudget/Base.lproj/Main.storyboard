@@ -68,8 +68,8 @@
                                                 <constraint firstAttribute="width" constant="10" id="Lwh-Xa-k9K"/>
                                             </constraints>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Budget Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NPb-hv-1g3">
-                                            <rect key="frame" x="16" y="15" width="130.5" height="24"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Budget Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="NPb-hv-1g3">
+                                            <rect key="frame" x="16" y="15" width="274" height="24"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -104,6 +104,7 @@
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="RRf-OS-aoc" firstAttribute="leading" secondItem="NPb-hv-1g3" secondAttribute="trailing" constant="14" id="1RF-9N-5gS"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="RRf-OS-aoc" secondAttribute="trailing" id="Vde-FU-Dlp"/>
                                         <constraint firstItem="l1v-ol-rPS" firstAttribute="height" secondItem="7oo-qq-Xuv" secondAttribute="height" id="Z0j-W5-Vha"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="l1v-ol-rPS" secondAttribute="trailing" constant="-40" id="ZWe-Rb-3W3"/>
@@ -139,7 +140,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="742" y="-630"/>
+            <point key="canvasLocation" x="741.60000000000002" y="-630.13493253373315"/>
         </scene>
         <!--Edit Budget Table View Controller-->
         <scene sceneID="2mV-B5-5kz">
@@ -161,7 +162,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Budget Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qjR-b3-gjw">
-                                                    <rect key="frame" x="25" y="11" width="334" height="21"/>
+                                                    <rect key="frame" x="24" y="11" width="335" height="21"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
@@ -172,7 +173,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="qjR-b3-gjw" secondAttribute="trailing" constant="8" id="1bZ-js-Lg9"/>
-                                                <constraint firstItem="qjR-b3-gjw" firstAttribute="leading" secondItem="XTR-10-RNW" secondAttribute="leadingMargin" constant="17" id="XTL-6m-Vys"/>
+                                                <constraint firstItem="qjR-b3-gjw" firstAttribute="leading" secondItem="XTR-10-RNW" secondAttribute="leadingMargin" constant="16" id="XTL-6m-Vys"/>
                                                 <constraint firstItem="qjR-b3-gjw" firstAttribute="centerY" secondItem="XTR-10-RNW" secondAttribute="centerY" id="liO-wm-jxw"/>
                                             </constraints>
                                         </tableViewCellContentView>
